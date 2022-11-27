@@ -23,6 +23,11 @@ for (int i = 0; i < n; i++)
         min = num[i];
     }
 }
+
+Console.Write(String.Join("; ", num));
+
+Console.WriteLine();
+
 Console.WriteLine($" В данном массиве разница между максимальным ({max}) и минимальным ({min})\n элементом с учетом знака будет равна max - min  = {Math.Round((max - min), 2)}");
 
  double[] SetArrayRealNumbers (int n)
@@ -34,10 +39,8 @@ Console.WriteLine($" В данном массиве разница между м
         num[i] = new Random().Next(100, 1000) + new Random().NextDouble();
 
         num[i] = Math.Round(num[i], 2);
-        Console.WriteLine(num[i]);
     }
     return num;
 }
-Console.Write(String.Join(", ", num));
-Console.WriteLine();
+
 
