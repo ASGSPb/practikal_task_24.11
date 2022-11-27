@@ -1,5 +1,5 @@
-﻿// Задайте массив заполненный 
-// случайными положительными трёхзначными числами. 
+﻿// Задайте массив заполненный
+// случайными положительными трёхзначными числами.
 // Напишите программу, которая покажет количество чётных чисел в массиве.
 // [345, 897, 568, 234] -> 2
 
@@ -9,17 +9,8 @@ Console.Write(" N =  ");
 
 int n = Convert.ToInt32(Console.ReadLine());
 
-int[] num = new int[n];
+int[] num = SetArrayThreeDigitNumbers(n);
 
-SetArrayThreeDigitNumbers(num);
-
-void SetArrayThreeDigitNumbers(int[] num)
-{
-  for (int i = 0; i < n; i++)
-  {   
-        num[i] = new Random().Next(100,1000);
-  } 
-}
 Console.Write(String.Join(", ", num));
 Console.WriteLine();
 Console.WriteLine();
@@ -28,11 +19,22 @@ int even = 0;
 
 for (int i = 0; i < n; i++)
 {
-    if (num[i]%2 == 0)
+    if (num[i] % 2 == 0)  
     {
-        even = even + 1;
+      even = even + 1;
     }
+    
 }
 Console.WriteLine($" В данном массиве {even} четных чисел");
 Console.WriteLine();
 
+int[] SetArrayThreeDigitNumbers(int n)
+{
+    int[] num = new int[n];
+
+    for (int i = 0; i < n; i++)
+    {
+        num[i] = new Random().Next(100, 1000);
+    }
+    return num;
+}
